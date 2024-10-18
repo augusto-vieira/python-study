@@ -15,7 +15,7 @@
 1. **Instalação:**
    - Clone o repositório:
      ```bash
-     git clone <URL-do-repositório>
+     git clone https://github.com/augusto-vieira/WordWise.git
      cd WordWise
      ```
    - Instale as dependências (se necessário).
@@ -32,7 +32,7 @@
    - Selecione as palavras que você conhece, escolhendo uma cor para cada uma.
    - Acompanhe a contagem total de palavras e a porcentagem de palavras conhecidas.
 
-[ur_interface]()
+![ur_interface](https://github.com/augusto-vieira/WordWise/blob/main/img/user_interface.png)
 
 ## Tecnologias Usadas
 
