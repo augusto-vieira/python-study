@@ -1,0 +1,7 @@
+Visão Geral: WordWise é um aplicativo interativo para estudo de idiomas que ajuda os usuários a expandirem seu vocabulário de forma prática e visual.
+
+Funcionalidade Principal: Os usuários podem digitar ou colar textos, que são processados para extrair palavras. O aplicativo contabiliza o total de palavras, palavras únicas e palavras repetidas, apresentando essas informações de forma clara.
+
+Interatividade: Após processar o texto, os usuários podem selecionar palavras conhecidas usando cores. Isso permite uma visualização rápida do vocabulário já aprendido, tornando o aprendizado mais dinâmico.
+
+Feedback e Progresso: WordWise calcula a porcentagem de palavras conhecidas, permitindo que os usuários acompanhem seu progresso ao longo do tempo. Eles também podem desmarcar seleções facilmente para revisar seu aprendizado.
