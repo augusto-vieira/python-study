@@ -1,0 +1,24 @@
+<body>
+    <div class="container">
+         <!-- Título principal da aplicação -->
+        <h1>Password Validator</h1>
+        <!-- Campo de entrada para a senha do usuário -->
+        <input type="password" id="password" placeholder="Type your password" />
+        <!-- Lista de requisitos que a senha deve atender -->
+        <ul id="requirements">
+            <li id="length" class="invalid">Min. 8 caracteres</li>
+            <li id="uppercase" class="invalid">Uma letra maiuscula</li>
+            <li id="lowercase" class="invalid">Uma letra minuscula</li>
+            <li id="number" class="invalid">Um numero</li>
+            <li id="special" class="invalid">Um caractere especial</li>
+        </ul>
+        <!-- Área para exibir mensagem final sobre a senha -->
+        <div id="message"></div>
+    </div>
+    <!-- Importa o script JS responsável pela validação da senha -->
+    <script src="app.js"></script>
+</body>
+<head>
+    <!-- Importa o arquivo de estilos para requisitos visuais -->
+    <link rel="stylesheet" href="styles.css">
+</head>
