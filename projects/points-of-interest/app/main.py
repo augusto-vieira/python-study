@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Body, HTTPException
-from app.schemas.poi_schema import POISearchRequest, POISearchResponse
+from app.schemas.poi_schema import POISearchRequest, POISearchResponse, POIItem
 from app.services.finder import find_nearby_pois
 from app.models.point import POI
 
@@ -17,13 +17,6 @@ pois = [
     POI(name="Churrascaria", x=28, y=2),
 ]
 
-@app.post("/search", response_model=POISearchResponse)
-def search_pois(request: POISearchRequest):
-    """
-    Rota para buscar POIs próximos a um ponto (x, y), dentro de uma distância máxima.
-    """
-    result = find_nearby_pois(pois, x=request.x, y=request.y, max_distance=request.max_distance)
-    return POISearchResponse(results=result)
 
 @app.get("/list", response_model=POISearchResponse)
 def list_pois():
@@ -32,6 +25,13 @@ def list_pois():
     """
     return POISearchResponse(results=[poi.to_dict() for poi in pois])
 
+@app.post("/search", response_model=POISearchResponse)
+def search_pois(request: POISearchRequest):
+    """
+    Rota para buscar POIs próximos a um ponto (x, y), dentro de uma distância máxima.
+    """
+    result = find_nearby_pois(pois, x=request.x, y=request.y, max_distance=request.max_distance)
+    return POISearchResponse(results=result)
 
 @app.post("/create", response_model=POIItem)
 def create_poi(poi: POIItem = Body(...)):
