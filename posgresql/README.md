@@ -124,6 +124,7 @@ Isso criará a tabela `pois` no banco PostgreSQL.
 ---
 
 ## 5. Operações CRUD (`main.py`)
+**C**reate **R**ead **U**pdate **D**elete
 
 ```python
 # main.py
@@ -246,14 +247,11 @@ if __name__ == "__main__":
 
 ## 7. Próximos passos
 
-- Criar **testes automatizados** usando SQLite in-memory para validar lógica.
+- Criar **testes automatizados** 
 - Implementar **migrations** com Alembic.
 - Criar API REST com **FastAPI** para expor os POIs.
 
 ---
-
-**Conclusão:** Com **Python + SQLAlchemy + PostgreSQL** conseguimos criar um sistema robusto e organizado para armazenar e manipular POIs de forma segura, seguindo boas práticas e mantendo o código limpo.
-
 
 
 **Help**
@@ -264,39 +262,23 @@ docker exec -it poi_postgres bash
 ```bash
 psql -h localhost -U poiuser -d poidb  # senha poipass
 ```
-**SQL**
-```sql
--- Listar Bancos de Dados
-\l
--- Outra maneira (SQL Puro)
-SELECT datname FROM pg_database;
+**Comando interno do Banco**
+```bash
+\l                # Listar bancos de dados
+\dt               # Listar tabelas do banco atual
+\c                # dbname Conectar a outro banco
+\q                # Sair do psql
 
--- Listar Tabelas de um Banco de Dados
-\dt
--- SQL Puro
-SELECT table_name 
-FROM information_schema.tables 
-WHERE table_schema = 'public'; -- Para listar apenas as tabelas no schema público
+\d nome_tabela    # Listar colunas de uma tabela
+```
+**Run Fast**
+```bash
+uv venv
+source .venv/bin/activate
+uv pip install sqlalchemy dotenv psycopg
 
--- Listar Colunas de uma Tabela
-\d nome_da_tabela
--- SQL Puro
-SELECT column_name
-FROM information_schema.columns
-WHERE table_name = 'nome_da_tabela';
+docker-compose up -d
 
-
--- Selecionando todas as colunas:
--- SELECT * FROM nome_da_tabela;
-SELECT * FROM pois;
-
--- Inserindo dados em todas as colunas:
--- INSERT INTO nome_da_tabela (coluna1, coluna2, coluna3)
--- VALUES ('valor1', 'valor2', 'valor3');
-INSERT INTO pois (name, x, y)
-VALUES ('Casa', 19, 13);
-
--- Inserindo dados em algumas colunas (omitindo as que ficam nulas):
-INSERT INTO pois (name)
-VALUES ('CasaNova');  -- vai retornar erro, não aceita valor vazio.
+python criar_tabela.py
+python main.py
 ```

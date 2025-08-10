@@ -1,7 +1,7 @@
 # db.py
 import os
 from dotenv import load_dotenv
-from sqlalhemy import create_engine
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 # Pegamos a URL do banco de dados via variável de ambiente (boa prática)
