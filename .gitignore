@@ -28,6 +28,4 @@ dist/
 *~
 
 # Arquivos de ambiente (envs sensíveis)
-.env
 .secrets
-*.env
