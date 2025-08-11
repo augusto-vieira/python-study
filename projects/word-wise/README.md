@@ -15,8 +15,12 @@
 1. **Instalação:**
    - Clone o repositório:
      ```bash
-     git clone https://github.com/augusto-vieira/WordWise.git
-     cd WordWise
+     git clone --filter=blob:none --no-checkout https://github.com/augusto-vieira/python-study.git
+     cd python-study/
+     git sparse-checkout init --cone
+     git sparse-checkout set projects/points-of-interest/
+     git checkout main
+     cd /projects/word-wise
      ```
    - Instale as dependências (se necessário).
 

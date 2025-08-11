@@ -282,3 +282,11 @@ docker-compose up -d
 python criar_tabela.py
 python main.py
 ```
+**Clone do projeto**
+```bash
+git clone --filter=blob:none --no-checkout https://github.com/augusto-vieira/python-study.git
+cd python-study/
+git sparse-checkout init --cone
+git sparse-checkout set PostgreSQL
+git checkout main
+```
